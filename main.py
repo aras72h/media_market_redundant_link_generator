@@ -1,11 +1,17 @@
+import json
+import sys
 from urllib.request import urlopen, HTTPError
-import json 
+
 
 
 def main():
+    # Check for correct usage
+    if len(sys.argv) != 3:
+        print("Usage: main.py [NETWORK ID] [DATE yyyy-mm-dd]")
+        sys.exit(1)
     # Store network id and date
-    network_id = 700
-    date = "2023-12-05"
+    network_id = int(sys.argv[1])
+    date = sys.argv[2]
     # Generate url for playlist
     redundant_url = f"http://mediamarketstreamer2.irib.ir/redundant/{network_id}/{date}/playlist.json"
     # Read json response using python magic
