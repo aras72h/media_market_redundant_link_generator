@@ -21,15 +21,14 @@ def main():
         url = f"http://mediamarketstreamer2.irib.ir/redundant/{network_id}/{date}/"
         for video_info in data_json:
            print(url + video_info["file"])
-        # Count all files
+        # Count files
         files_count, false_exist_count = 0, 0
-        for _ in data_json:
-            files_count += 1
-        print(f"Number of files: {files_count}")
-        # Count number of non-existent files
         for video_file in data_json:
+            # Count number of non-existent files
             if video_file["exist"] == False:
                 false_exist_count += 1
+            files_count += 1
+        print(f"Number of files: {files_count}")
         print(f"Number of false exists: {false_exist_count}")
     # Handle http errors
     except HTTPError as err:
