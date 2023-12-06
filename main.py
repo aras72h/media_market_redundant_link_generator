@@ -6,7 +6,7 @@ from urllib.request import urlopen, HTTPError
 def main():
     # Check for correct usage
     if len(sys.argv) != 3:
-        print("Usage: main.py [NETWORK ID] [DATE yyyy-mm-dd]")
+        print("Usage: main.py [NETWORK ID] [DATE(yyyy-mm-dd)]")
         sys.exit(1)
     # Store network id and date
     network_id = int(sys.argv[1])
@@ -31,6 +31,7 @@ def main():
             if video_file["exist"] == False:
                 false_exist_count += 1
         print(f"Number of false exists: {false_exist_count}")
+    # Handle http errors
     except HTTPError as err:
         print(err)
     
