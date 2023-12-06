@@ -9,7 +9,7 @@ def main():
         print("Usage: main.py [NETWORK ID] [DATE(yyyy-mm-dd)]")
         sys.exit(1)
     # Store network id and date
-    network_id = int(sys.argv[1])
+    network_id = sys.argv[1]
     date = sys.argv[2]
     # Generate url for playlist
     redundant_url = f"http://mediamarketstreamer2.irib.ir/redundant/{network_id}/{date}/playlist.json"
