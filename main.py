@@ -3,7 +3,6 @@ import sys
 from urllib.request import urlopen, HTTPError
 
 
-
 def main():
     # Check for correct usage
     if len(sys.argv) != 3:
