@@ -12,11 +12,11 @@ Run the following command to run the script:
 python main.py [network_id] [date]
 ```
 
-Example:
+### Example:
 
-Network ID: `700`
+**Network ID**: `700`
 
-Date: 2023-12-05
+**Date**: 2023-12-05
 
 ```
 python main.py 700 2023-12-05
